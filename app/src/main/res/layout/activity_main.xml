@@ -6,36 +6,388 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_main_scene">
 
+    <!--Start Email-->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_email"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        app:cardBackgroundColor="@color/blue"
+        android:id="@+id/start_materialCardView_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"/>
+        app:cardElevation="4dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:hintEnabled="true"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/white"
+                    android:inputType="textEmailAddress"
+                    android:textSize="26sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_email_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_lightgray_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_email" />
+
+            <TextView
+                android:id="@+id/tv_email_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Valid email address"
+                android:textColor="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_email_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_email_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_email_correct" />
+
+            <TextView
+                android:id="@+id/tv_email_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Next"
+                android:textColor="@color/light_gray"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email_error" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!--End Email-->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_password"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        app:cardBackgroundColor="@color/orange"
+        android:id="@+id/end_materialCardView_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="3dp"/>
+        app:cardElevation="4dp">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_end_email_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_green_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_end_email_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Email"
+                android:textColor="@color/green"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_end_email_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_end_email_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_end_email_correct" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--Start Password-->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_birthDay"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        app:cardBackgroundColor="@color/green"
+        android:id="@+id/start_materialCardView_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"/>
+        app:cardElevation="3dp" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                app:hintEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/white"
+                    android:inputType="textPassword"
+                    android:textSize="26sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/iv_password_isAtLeast8_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_lightgray_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/til_password" />
+
+            <TextView
+                android:id="@+id/tv_password_isAtLeast8_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/isAtLeast8"
+                android:textColor="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_password_isAtLeast8_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_password_isAtLeast8_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_password_isAtLeast8_correct" />
+
+            <ImageView
+                android:id="@+id/iv_password_hasUppercase_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_lightgray_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_password_isAtLeast8_correct" />
+
+            <TextView
+                android:id="@+id/tv_password_hasUppercase_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/hasUppercase"
+                android:textColor="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_password_hasUppercase_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_password_hasUppercase_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_password_hasUppercase_correct" />
+
+            <ImageView
+                android:id="@+id/iv_password_hasNumber_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_lightgray_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password_hasUppercase_error" />
+
+            <TextView
+                android:id="@+id/tv_password_hasNumber_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/hasNumber"
+                android:textColor="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_password_hasNumber_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_password_hasNumber_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_password_hasNumber_correct" />
+
+            <ImageView
+                android:id="@+id/iv_password_hasSymbol_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_lightgray_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password_hasNumber_error" />
+
+            <TextView
+                android:id="@+id/tv_password_hasSymbol_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/hasSymbol"
+                android:textColor="@color/light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_password_hasSymbol_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_password_hasSymbol_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_password_hasSymbol_correct" />
+
+            <TextView
+                android:id="@+id/tv_password_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Next"
+                android:textColor="@color/light_gray"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_password_hasSymbol_correct" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!--End Password-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/end_materialCardView_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_end_password_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_green_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_end_password_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Password"
+                android:textColor="@color/green"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_end_password_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_end_password_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_end_password_correct" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--Start Birth Date-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/start_materialCardView_birthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_birthDate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Birth date"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_birthDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a birth date"
+                android:layout_marginTop="12dp"
+                android:textSize="26sp"
+                android:textColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_birthDate_title"/>
+
+            <TextView
+                android:id="@+id/tv_birthDate_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="Next"
+                android:textColor="@color/light_gray"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_birthDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!--End Birth Date-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/end_materialCardView_birthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_end_birthDate_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_correct_circle_green_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_end_birthDate_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Birth date"
+                android:textColor="@color/green"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_end_birthDate_correct"
+                app:layout_constraintStart_toEndOf="@+id/iv_end_birthDate_correct"
+                app:layout_constraintTop_toTopOf="@+id/iv_end_birthDate_correct" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--Phone number-->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView_phoneNumber"
         android:layout_width="300dp"
         android:layout_height="100dp"
         app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="16dp"
-        app:cardElevation="1dp"/>
+        app:cardElevation="1dp" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

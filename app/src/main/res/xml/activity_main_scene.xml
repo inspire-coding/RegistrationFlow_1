@@ -6,47 +6,79 @@
         android:id="@+id/startToEnd_materialCardView_email"
         app:constraintSetEnd="@+id/end_materialCardView_email"
         app:constraintSetStart="@+id/start_materialCardView_email"
-        app:duration="1000">
+        app:duration="500">
         <OnClick
             app:clickAction="toggle"
-            app:targetId="@+id/materialCardView_email" />
+            app:targetId="@+id/start_materialCardView_email" />
+    </Transition>
+    <Transition
+        android:id="@+id/endToStart_materialCardView_email"
+        app:constraintSetEnd="@+id/start_materialCardView_email"
+        app:constraintSetStart="@+id/end_materialCardView_email"
+        app:duration="500">
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/end_materialCardView_email" />
     </Transition>
 
     <Transition
         android:id="@+id/startToEnd_materialCardView_password"
         app:constraintSetEnd="@+id/end_materialCardView_password"
         app:constraintSetStart="@+id/end_materialCardView_email"
-        app:duration="1000">
+        app:duration="500">
         <OnClick
             app:clickAction="toggle"
-            app:targetId="@+id/materialCardView_password" />
+            app:targetId="@+id/start_materialCardView_password" />
+    </Transition>
+    <Transition
+        android:id="@+id/endToStart_materialCardView_password"
+        app:constraintSetEnd="@+id/end_materialCardView_email"
+        app:constraintSetStart="@+id/end_materialCardView_password"
+        app:duration="500">
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/end_materialCardView_password" />
     </Transition>
 
     <Transition
-        android:id="@+id/startToEnd_materialCardView_birthDay"
-        app:constraintSetEnd="@+id/end_materialCardView_birthDay"
+        android:id="@+id/startToEnd_materialCardView_birthDate"
+        app:constraintSetEnd="@+id/end_materialCardView_birthDate"
         app:constraintSetStart="@+id/end_materialCardView_password"
-        app:duration="1000">
+        app:duration="500">
         <OnClick
             app:clickAction="toggle"
-            app:targetId="@+id/materialCardView_birthDay" />
+            app:targetId="@+id/start_materialCardView_birthDate" />
+    </Transition>
+    <Transition
+        android:id="@+id/endToStart_materialCardView_birthDate"
+        app:constraintSetEnd="@+id/end_materialCardView_password"
+        app:constraintSetStart="@+id/end_materialCardView_birthDate"
+        app:duration="500">
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/end_materialCardView_birthDate" />
     </Transition>
 
     <Transition
         android:id="@+id/startToEnd_materialCardView_phoneNumber"
         app:constraintSetEnd="@+id/end_materialCardView_phoneNumber"
-        app:constraintSetStart="@+id/end_materialCardView_birthDay"
+        app:constraintSetStart="@+id/end_materialCardView_birthDate"
         app:duration="1000">
         <OnClick
             app:clickAction="toggle"
             app:targetId="@+id/materialCardView_phoneNumber" />
     </Transition>
 
+
+
     <ConstraintSet android:id="@+id/start_materialCardView_email">
-        <Constraint android:id="@+id/materialCardView_email">
+        <Constraint android:id="@+id/start_materialCardView_email">
             <Layout
-                android:layout_width="300dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,11 +88,29 @@
                 app:attributeName="radius"
                 app:customDimension="16dp" />
             <Transform
-                android:elevation="4dp" />
+                android:elevation="4dp"/>
             <PropertySet
-                android:alpha="1"/>
+                android:visibility="visible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_password">
+        <Constraint android:id="@+id/end_materialCardView_email">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+            <Transform
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+
+
+        <Constraint android:id="@+id/start_materialCardView_password">
             <Layout
                 android:layout_width="300dp"
                 android:layout_height="100dp"
@@ -77,7 +127,9 @@
             <PropertySet
                 android:alpha="0"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_birthDay">
+
+
+        <Constraint android:id="@+id/start_materialCardView_birthDate">
             <Layout
                 android:layout_width="300dp"
                 android:layout_height="100dp"
@@ -113,7 +165,7 @@
         </Constraint>
     </ConstraintSet>
     <ConstraintSet android:id="@+id/end_materialCardView_email">
-        <Constraint android:id="@+id/materialCardView_email">
+        <Constraint android:id="@+id/start_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -126,11 +178,33 @@
                 app:customDimension="0dp" />
             <Transform
                 android:elevation="1dp" />
+            <PropertySet
+                android:visibility="invisible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_password">
+        <Constraint android:id="@+id/end_materialCardView_email">
             <Layout
-                android:layout_width="300dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+            <Transform
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
+        </Constraint>
+
+
+        <Constraint android:id="@+id/start_materialCardView_password">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +218,9 @@
             <PropertySet
                 android:alpha="1"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_birthDay">
+
+
+        <Constraint android:id="@+id/start_materialCardView_birthDate">
             <Layout
                 android:layout_width="300dp"
                 android:layout_height="100dp"
@@ -181,7 +257,11 @@
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end_materialCardView_password">
-        <Constraint android:id="@+id/materialCardView_email">
+        <Constraint android:id="@+id/start_materialCardView_email">
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -194,25 +274,46 @@
                 app:customDimension="0dp" />
             <Transform
                 android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_password">
+
+
+        <Constraint android:id="@+id/start_materialCardView_password">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_email" />
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_password">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
             <Transform
-                android:elevation="2dp" />
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_birthDay">
+
+
+        <Constraint android:id="@+id/start_materialCardView_birthDate">
             <Layout
-                android:layout_width="300dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -222,7 +323,7 @@
                 app:attributeName="radius"
                 app:customDimension="16dp" />
             <Transform
-                android:elevation="2dp" />
+                android:elevation="3dp" />
             <PropertySet
                 android:alpha="1"/>
         </Constraint>
@@ -245,8 +346,8 @@
         </Constraint>
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/end_materialCardView_birthDay">
-        <Constraint android:id="@+id/materialCardView_email">
+    <ConstraintSet android:id="@+id/end_materialCardView_birthDate">
+        <Constraint android:id="@+id/start_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -259,35 +360,85 @@
                 app:customDimension="0dp" />
             <Transform
                 android:elevation="1dp" />
+            <PropertySet
+                android:visibility="invisible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_password">
+        <Constraint android:id="@+id/end_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_email" />
+                app:layout_constraintTop_toTopOf="parent" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
             <Transform
-                android:elevation="2dp" />
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_birthDay">
+
+
+        <Constraint android:id="@+id/start_materialCardView_password">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_password" />
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_password">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
             <Transform
-                android:elevation="3dp" />
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
+
+
+        <Constraint android:id="@+id/start_materialCardView_birthDate">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_password" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_birthDate">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_password" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+            <Transform
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
+        </Constraint>
+
+
         <Constraint android:id="@+id/materialCardView_phoneNumber">
             <Layout
                 android:layout_width="300dp"
@@ -308,7 +459,7 @@
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end_materialCardView_phoneNumber">
-        <Constraint android:id="@+id/materialCardView_email">
+        <Constraint android:id="@+id/start_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -321,35 +472,85 @@
                 app:customDimension="0dp" />
             <Transform
                 android:elevation="1dp" />
+            <PropertySet
+                android:visibility="invisible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_password">
+        <Constraint android:id="@+id/end_materialCardView_email">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_email" />
+                app:layout_constraintTop_toTopOf="parent" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
             <Transform
-                android:elevation="2dp" />
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
-        <Constraint android:id="@+id/materialCardView_birthDay">
+
+
+        <Constraint android:id="@+id/start_materialCardView_password">
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_password" />
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_password">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
             <Transform
-                android:elevation="3dp" />
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
         </Constraint>
+
+
+        <Constraint android:id="@+id/start_materialCardView_birthDate">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_email" />
+            <PropertySet
+                android:visibility="invisible"/>
+        </Constraint>
+        <Constraint android:id="@+id/end_materialCardView_birthDate">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintDimensionRatio="16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_password" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+            <Transform
+                android:elevation="1dp" />
+            <PropertySet
+                android:visibility="visible"/>
+        </Constraint>
+
+
         <Constraint android:id="@+id/materialCardView_phoneNumber">
             <Layout
                 android:layout_width="match_parent"
@@ -357,7 +558,7 @@
                 app:layout_constraintDimensionRatio="16:9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/materialCardView_birthDay" />
+                app:layout_constraintTop_toBottomOf="@id/end_materialCardView_birthDate" />
             <CustomAttribute
                 app:attributeName="radius"
                 app:customDimension="0dp" />
