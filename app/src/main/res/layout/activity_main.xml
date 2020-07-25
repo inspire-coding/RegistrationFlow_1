@@ -7,7 +7,7 @@
     app:layoutDescription="@xml/activity_main_scene">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_1"
+        android:id="@+id/materialCardView_email"
         android:layout_width="300dp"
         android:layout_height="100dp"
         app:cardBackgroundColor="@color/blue"
@@ -15,7 +15,7 @@
         app:cardElevation="4dp"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_2"
+        android:id="@+id/materialCardView_password"
         android:layout_width="300dp"
         android:layout_height="100dp"
         app:cardBackgroundColor="@color/orange"
@@ -23,7 +23,7 @@
         app:cardElevation="3dp"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_3"
+        android:id="@+id/materialCardView_birthDay"
         android:layout_width="300dp"
         android:layout_height="100dp"
         app:cardBackgroundColor="@color/green"
@@ -31,7 +31,7 @@
         app:cardElevation="2dp"/>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView_4"
+        android:id="@+id/materialCardView_phoneNumber"
         android:layout_width="300dp"
         android:layout_height="100dp"
         app:cardBackgroundColor="@color/gray"

@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        android:id="@+id/startToEnd_materialCardView_1"
-        app:constraintSetEnd="@+id/end_materialCardView_1"
-        app:constraintSetStart="@+id/start_materialCardView_1"
+        android:id="@+id/startToEnd_materialCardView_email"
+        app:constraintSetEnd="@+id/end_materialCardView_email"
+        app:constraintSetStart="@+id/start_materialCardView_email"
         app:duration="1000">
         <OnClick
             app:clickAction="toggle"
@@ -24,7 +24,7 @@
     </Transition>
 
 
-    <ConstraintSet android:id="@+id/start_materialCardView_1">
+    <ConstraintSet android:id="@+id/start_materialCardView_email">
         <Constraint android:id="@+id/bookSynopsisCard">
             <Layout
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +42,7 @@
     </ConstraintSet>
 
 
-    <ConstraintSet android:id="@+id/end_materialCardView_1">
+    <ConstraintSet android:id="@+id/end_materialCardView_email">
         <Constraint android:id="@+id/bookSynopsisCard">
             <Layout
                 app:layout_constraintDimensionRatio="16:9"
